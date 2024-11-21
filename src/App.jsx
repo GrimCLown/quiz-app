@@ -1,21 +1,21 @@
-import './App.css'
-import Quiz from './components/Quiz'
-
+import "./App.css";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Quiz from "./components/Quiz";
+import Home from "./components/Home";
 
 function App() {
-
-
   return (
     <>
-    <div className='h-screen flex flex-col justify-center items-center bg-[#FFFCF2] gap-4'>
-        <h1 className="text-5xl font-bold text-[#EB5E28]">
-          Quiz Wiz
-        </h1>
-        <Quiz/>
-
-    </div>
+      <Router>
+        <div className="App">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/quiz" element={<Quiz />} />
+          </Routes>
+        </div>
+      </Router>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
